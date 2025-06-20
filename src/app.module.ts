@@ -44,17 +44,16 @@ import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'SQL1003.site4now.net',
-      port: 1433,
-      username: 'db_ab848f_florapp_admin',
-      password: 'Deliflor2025.',
-      database: 'db_ab848f_florapp',
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false, // Solo para desarrollo, no en producción
-      options: {
-        encrypt: true, // Para SmarterASP
-      },
+      synchronize: false,
+      options: { encrypt: true },
     }),
+
     UsersModule,
     AuthModule,
     RolesModule,

@@ -11,11 +11,11 @@ async function bootstrap() {
 
   // Usa las variables de entorno para configurar puerto y host
   const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-  const host = process.env.HOST || 'localhost';
+  // const host = process.env.HOST || 'localhost';
 
   // Inicia la app
-  await app.listen(port, host);
-  console.log(`🚀 App running on http://${host}:${port}`);
+  await app.listen(port /*, host*/);
+  // console.log(`🚀 App running on http://${host}:${port}`);
 }
 
 // Llama la función bootstrap y captura errores en caso de fallo
