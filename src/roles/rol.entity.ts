@@ -1,5 +1,12 @@
 import { User } from 'src/users/user.entity';
-import { Column, Entity, ManyToMany, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToMany,
+  PrimaryColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'roles', schema: 'seguridad' })
 export class Rol {
@@ -15,10 +22,10 @@ export class Rol {
   @Column()
   route: string;
 
-  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn({ type: 'timestamp' })
   updated: Date;
 
   @ManyToMany(() => User, (user) => user.roles)

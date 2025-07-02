@@ -1,10 +1,12 @@
 import {
   BeforeInsert,
   Column,
+  CreateDateColumn,
   Entity,
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { hash } from 'bcrypt';
 import { Rol } from 'src/roles/rol.entity';
@@ -35,10 +37,10 @@ export class User {
   @Column({ nullable: true })
   notification_token: string;
 
-  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
+  @UpdateDateColumn({ type: 'timestamp' })
   updated: Date;
 
   @JoinTable({

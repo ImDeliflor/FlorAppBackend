@@ -1,8 +1,9 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, PrimaryColumn, ViewEntity } from 'typeorm';
 
-@Entity({
+@ViewEntity({
   name: 'informe_checklist_calidad_esqueje_v',
   schema: 'calidad_views',
+  synchronize: false,
 })
 export class ChecklistEsquejeView {
   @PrimaryColumn()

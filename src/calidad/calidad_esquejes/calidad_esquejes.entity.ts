@@ -1,55 +1,55 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
 
-@Entity({ name: 'calidad_esqueje_tbl', schema: 'calidad' })
+@Entity({ name: 'calidad_esqueje_tbl', schema: 'calidad', synchronize: false })
 export class CalidadEsqueje {
   @PrimaryGeneratedColumn({ name: 'id_ce' })
   id_ce: number;
 
-  @Column({ type: 'datetime', name: 'fecha' })
+  @Column({ type: 'timestamp', name: 'fecha' })
   fecha: Date;
 
-  @Column({ type: 'int', name: 'id_empleado' })
+  @Column({ type: 'integer', name: 'id_empleado' })
   id_empleado: number;
 
-  @Column({ type: 'int', name: 'id_variedad' })
+  @Column({ type: 'integer', name: 'id_variedad' })
   id_variedad: number;
 
   @Column({ type: 'varchar', length: 5, name: 'seleccion' })
   seleccion: string;
 
-  @Column({ type: 'int', name: 'total_esquejes' })
+  @Column({ type: 'integer', name: 'total_esquejes' })
   total_esquejes: number;
 
-  @Column({ type: 'int', name: 'corto' })
+  @Column({ type: 'integer', name: 'corto' })
   corto: number;
 
-  @Column({ type: 'int', name: 'largo' })
+  @Column({ type: 'integer', name: 'largo' })
   largo: number;
 
-  @Column({ type: 'int', name: 'pla_enf' })
+  @Column({ type: 'integer', name: 'pla_enf' })
   pla_enf: number;
 
-  @Column({ type: 'int', name: 'delgado' })
+  @Column({ type: 'integer', name: 'delgado' })
   delgado: number;
 
-  @Column({ type: 'int', name: 'grueso' })
+  @Column({ type: 'integer', name: 'grueso' })
   grueso: number;
 
-  @Column({ type: 'int', name: 'inmaduro' })
+  @Column({ type: 'integer', name: 'inmaduro' })
   inmaduro: number;
 
-  @Column({ type: 'int', name: 'pasado' })
+  @Column({ type: 'integer', name: 'pasado' })
   pasado: number;
 
-  @Column({ type: 'int', name: 'hoja_base' })
+  @Column({ type: 'integer', name: 'hoja_base' })
   hoja_base: number;
 
-  @Column({ type: 'int', name: 'deshid_maltr' })
+  @Column({ type: 'integer', name: 'deshid_maltr' })
   deshid_maltr: number;
 
-  @Column({ type: 'int', name: 'esquejes_reales' })
+  @Column({ type: 'integer', name: 'esquejes_reales' })
   esquejes_reales: number;
 
-  @Column({ type: 'int', name: 'esquejes_totales' })
+  @Column({ type: 'integer', name: 'esquejes_totales' })
   esquejes_totales: number;
 }

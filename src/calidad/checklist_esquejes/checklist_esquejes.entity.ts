@@ -1,6 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'checklist_esqueje_tbl', schema: 'calidad' })
+@Entity({
+  name: 'checklist_esqueje_tbl',
+  schema: 'calidad',
+  synchronize: false,
+})
 export class ChecklistEsqueje {
   @PrimaryGeneratedColumn()
   id_che: number;

@@ -1,14 +1,15 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Column, PrimaryColumn, ViewEntity } from 'typeorm';
 
-@Entity({
+@ViewEntity({
   name: 'informe_evaluaciones_calidad_esqueje_v',
   schema: 'calidad_views',
+  synchronize: false,
 })
 export class CalidadEsquejeView {
   @PrimaryColumn()
   id_ce: number;
 
-  @Column({ type: 'datetime', name: 'fecha' })
+  @Column({ type: 'timestamp', name: 'fecha' })
   fecha: Date;
 
   @Column({ type: 'varchar', name: 'codigo_empleado' })
@@ -26,52 +27,52 @@ export class CalidadEsquejeView {
   @Column({ type: 'varchar', name: 'seleccion' })
   seleccion: string;
 
-  @Column({ type: 'int', name: 'total_esquejes' })
+  @Column({ type: 'integer', name: 'total_esquejes' })
   total_esquejes: number;
 
-  @Column({ type: 'int', name: 'corto' })
+  @Column({ type: 'integer', name: 'corto' })
   corto: number;
 
-  @Column({ type: 'int', name: 'largo' })
+  @Column({ type: 'integer', name: 'largo' })
   largo: number;
 
-  @Column({ type: 'int', name: 'pla_enf' })
+  @Column({ type: 'integer', name: 'pla_enf' })
   pla_enf: number;
 
-  @Column({ type: 'int', name: 'delgado' })
+  @Column({ type: 'integer', name: 'delgado' })
   delgado: number;
 
-  @Column({ type: 'int', name: 'grueso' })
+  @Column({ type: 'integer', name: 'grueso' })
   grueso: number;
 
-  @Column({ type: 'int', name: 'inmaduro' })
+  @Column({ type: 'integer', name: 'inmaduro' })
   inmaduro: number;
 
-  @Column({ type: 'int', name: 'pasado' })
+  @Column({ type: 'integer', name: 'pasado' })
   pasado: number;
 
-  @Column({ type: 'int', name: 'hoja_base' })
+  @Column({ type: 'integer', name: 'hoja_base' })
   hoja_base: number;
 
-  @Column({ type: 'int', name: 'deshid_maltr' })
+  @Column({ type: 'integer', name: 'deshid_maltr' })
   deshid_maltr: number;
 
-  @Column({ type: 'int', name: 'total_descartes' })
+  @Column({ type: 'integer', name: 'total_descartes' })
   total_descartes: number;
 
-  @Column({ type: 'int', name: 'esquejes_reales' })
+  @Column({ type: 'integer', name: 'esquejes_reales' })
   esquejes_reales: number;
 
-  @Column({ type: 'int', name: 'esquejes_totales' })
+  @Column({ type: 'integer', name: 'esquejes_totales' })
   esquejes_totales: number;
 
-  @Column({ type: 'int', name: 'porc_precision' })
+  @Column({ type: 'integer', name: 'porc_precision' })
   porc_precision: number;
 
-  @Column({ type: 'int', name: 'calidad' })
+  @Column({ type: 'integer', name: 'calidad' })
   calidad: number;
 
-  @Column({ type: 'int', name: 'calidad_ajustada' })
+  @Column({ type: 'integer', name: 'calidad_ajustada' })
   calidad_ajustada: number;
 
   @Column({ type: 'varchar', name: 'nro_dia' })

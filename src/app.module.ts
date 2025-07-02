@@ -37,21 +37,24 @@ import { RolesModule } from './roles/roles.module';
 import { CalidadEsquejesModule } from './calidad/calidad_esquejes/calidad_esquejes.module';
 //import { CalidadEsquejesService } from './calidad/calidad_esquejes/calidad_esquejes.service';
 import { EmpleadosModule } from './tablas_basicas/empleados/empleados.module';
-import { VariedadesModule } from './tablas_basicas/variedades/empleados.module';
+import { VariedadesModule } from './tablas_basicas/variedades/variedades.module';
 import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_esquejes.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mssql',
+      type: 'postgres',
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: false,
-      options: { encrypt: true },
+      synchronize: true,
+      // options: { encrypt: true },
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
 
     UsersModule,

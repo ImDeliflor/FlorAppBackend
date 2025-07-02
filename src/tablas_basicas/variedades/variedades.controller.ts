@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { VariedadesService } from './empleados.service';
+import { VariedadesService } from './variedades.service';
 import { CreateVariedadDTO } from './dto/create-variedad.dto';
 
 @Controller('variedades')
