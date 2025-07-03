@@ -12,6 +12,9 @@ export class CalidadEsquejeView {
   @Column({ type: 'timestamp', name: 'fecha' })
   fecha: Date;
 
+  @Column({ type: 'integer', name: 'id_empleado' })
+  id_empleado: string;
+
   @Column({ type: 'varchar', name: 'codigo_empleado' })
   codigo_empleado: string;
 
