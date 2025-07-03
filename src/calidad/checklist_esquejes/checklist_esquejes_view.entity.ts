@@ -13,6 +13,9 @@ export class ChecklistEsquejeView {
   fecha: Date;
 
   @Column()
+  id_empleado: number;
+
+  @Column()
   nombre_empleado: string;
 
   @Column()
