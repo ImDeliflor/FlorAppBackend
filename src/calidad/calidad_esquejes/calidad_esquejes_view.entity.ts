@@ -1,7 +1,7 @@
 import { Column, PrimaryColumn, ViewEntity } from 'typeorm';
 
 @ViewEntity({
-  name: 'informe_evaluaciones_calidad_esqueje_v',
+  name: 'historico_informe_evaluaciones_calidad_esqueje_v',
   schema: 'calidad_views',
   synchronize: false,
 })
