@@ -39,6 +39,8 @@ import { CalidadEsquejesModule } from './calidad/calidad_esquejes/calidad_esquej
 import { EmpleadosModule } from './tablas_basicas/empleados/empleados.module';
 import { VariedadesModule } from './tablas_basicas/variedades/variedades.module';
 import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_esquejes.module';
+import { CalidadSiembraModule } from './calidad/calidad_siembra/calidad_siembra.module';
+import { RendimientoSiembraModule } from './calidad/rendimiento_siembra/rendimiento_siembra.module';
 
 @Module({
   imports: [
@@ -50,7 +52,7 @@ import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      synchronize: false,
       // options: { encrypt: true },
       ssl: {
         rejectUnauthorized: false,
@@ -64,6 +66,8 @@ import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_
     EmpleadosModule,
     VariedadesModule,
     ChecklistEsquejesModule,
+    CalidadSiembraModule,
+    RendimientoSiembraModule,
   ],
   controllers: [AppController],
   providers: [AppService /*, CalidadEsquejesService*/],
