@@ -41,6 +41,10 @@ import { VariedadesModule } from './tablas_basicas/variedades/variedades.module'
 import { ChecklistEsquejesModule } from './calidad/checklist_esquejes/checklist_esquejes.module';
 import { CalidadSiembraModule } from './calidad/calidad_siembra/calidad_siembra.module';
 import { RendimientoSiembraModule } from './calidad/rendimiento_siembra/rendimiento_siembra.module';
+import { CalidadEnraizamientoModule } from './calidad/calidad_enraizamiento/calidad_enraizamiento.module';
+import { RendimientoEnraizamientoModule } from './calidad/rendimiento_enraizamiento/rendimiento_enraizamiento.module';
+import { RendimientoBandejasModule } from './calidad/rendimiento_bandejas/rendimiento_bandejas.module';
+import { CalidadBandejasModule } from './calidad/calidad_bandejas/calidad_bandejas.module';
 
 @Module({
   imports: [
@@ -68,6 +72,10 @@ import { RendimientoSiembraModule } from './calidad/rendimiento_siembra/rendimie
     ChecklistEsquejesModule,
     CalidadSiembraModule,
     RendimientoSiembraModule,
+    CalidadEnraizamientoModule,
+    RendimientoEnraizamientoModule,
+    RendimientoBandejasModule,
+    CalidadBandejasModule,
   ],
   controllers: [AppController],
   providers: [AppService /*, CalidadEsquejesService*/],
