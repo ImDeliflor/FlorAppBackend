@@ -5,5 +5,5 @@ export class CreateEmpleadoDTO {
   id_programa: number;
   id_area: number;
   id_cargo: number;
-  estado_empleado: string;
+  estado_empleado: boolean;
 }

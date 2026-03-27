@@ -20,7 +20,12 @@ export class CalidadEsquejesController {
     return this.calidadEsquejeService.create(calidadEsqueje);
   }
 
-  @Get('report')
+  @Post('/process')
+  processEvaluaciones(@Body() calidadEsqueje: CreateCalidadEsquejeDTO[]) {
+    return this.calidadEsquejeService.processEvaluaciones(calidadEsqueje);
+  }
+
+  @Get('/report')
   report() {
     return this.calidadEsquejesViewService.findAll();
   }

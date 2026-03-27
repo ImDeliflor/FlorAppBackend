@@ -17,6 +17,6 @@ export class EmpleadosService {
   }
 
   findAll() {
-    return this.empleadoRepository.find();
+    return this.empleadoRepository.find({ where: { estado_empleado: true } });
   }
 }

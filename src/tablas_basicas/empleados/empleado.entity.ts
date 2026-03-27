@@ -24,5 +24,5 @@ export class Empleado {
   id_cargo: number;
 
   @Column()
-  estado_empleado: string;
+  estado_empleado: boolean;
 }
